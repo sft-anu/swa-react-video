@@ -3,7 +3,8 @@ name: Azure Static Web Apps CI/CD
 on:
   push:
     branches:
-      - "**"
+      - main
+      - test-feature
   pull_request:
     types: [opened, synchronize, reopened, closed]
     branches:
@@ -32,6 +33,7 @@ jobs:
           api_location: "" # Api source code path - optional
           output_location: "build" # Built app content directory - optional
           deployment_environment: "6"
+          production_branch: "main"
           ###### End of Repository/Build Configurations ######
 
   close_pull_request_job:
